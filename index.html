@@ -1,4 +1,167 @@
-<main class="content-container">
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+    <title>AI 智能今日新聞簡報</title>
+    <style>
+        :root {
+            --bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #e4e8f0 100%);
+            --card-bg: rgba(255, 255, 255, 0.95);
+            --text-main: #1d1d1f;
+            --text-muted: #51525d;
+            --accent-color: #0066cc;
+            --accent-light: #e8f2ff;
+            --border-radius: 20px;
+            --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.03);
+            --shadow-md: 0 10px 30px rgba(18, 38, 63, 0.06);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            margin: 0;
+            padding: 24px 16px 40px 16px;
+            line-height: 1.6;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        /* Layout Architecture */
+        .content-container, .header {
+            max-width: 680px;
+            margin: 0 auto;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        /* Premium Header Styling */
+        .header {
+            margin-bottom: 28px;
+            padding: 0 8px;
+        }
+        .header .badge {
+            display: inline-block;
+            background: var(--accent-color);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            padding: 4px 10px;
+            border-radius: 50px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 10px rgba(0, 102, 204, 0.2);
+        }
+        .header h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin: 0;
+            letter-spacing: -0.5px;
+            background: linear-gradient(90deg, #1d1d1f, #434348);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Eye-Candy Cards */
+        .category-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            padding: 24px 20px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+        }
+        
+        .category-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            padding-bottom: 12px;
+        }
+        .title-icon {
+            margin-right: 8px;
+            font-size: 22px;
+        }
+
+        /* News Item List Components */
+        .news-item {
+            margin-bottom: 24px;
+        }
+        .news-item:last-of-type {
+            margin-bottom: 0;
+        }
+        
+        .news-headline {
+            font-size: 18px;
+            font-weight: 700;
+            line-height: 1.45;
+            margin: 0 0 8px 0;
+            color: #000000;
+            letter-spacing: -0.2px;
+        }
+        
+        .news-summary {
+            font-size: 16px;
+            color: var(--text-muted);
+            margin: 0 0 12px 0;
+            text-align: justify;
+        }
+
+        /* Touch Targets and Micro-Interactions */
+        .action-wrapper {
+            display: flex;
+            justify-content: flex-start;
+        }
+        .source-link {
+            display: inline-flex;
+            align-items: center;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            background: var(--accent-light);
+            padding: 8px 16px;
+            border-radius: 50px;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .source-link:active {
+            transform: scale(0.96);
+            background: #d4e7ff;
+        }
+
+        /* Desktop Optimization Breakpoint */
+        @media (min-width: 768px) {
+            body {
+                padding: 40px 24px;
+            }
+            .category-card {
+                padding: 32px 32px;
+            }
+            .news-headline {
+                font-size: 19px;
+            }
+            .source-link:hover {
+                background: #dcdffd;
+                color: #004499;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <span class="badge">Intelligence Briefing</span>
+        <h1>今日新聞簡報</h1>
+    </div>
+    <main class="content-container">
   <div class="category-card">
     <h3 class="category-title"><span class="title-icon">📍</span> 本地新聞 (Local News)</h3>
     
@@ -223,3 +386,5 @@
     </article>
   </div>
 </main>
+</body>
+</html>
